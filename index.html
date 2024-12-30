@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>x-app - redirect service</title>
+    <base href="https://kherrick.github.io/x-ml/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="x-app - redirect service" />
+    <meta
+      http-equiv="refresh"
+      content="1;url=https://kherrick.github.io/x-app/"
+    />
+    <script>
+      const base = document.querySelector("base").href;
+      const destination = "https://kherrick.github.io/x-app/";
+
+      let splitLocation;
+
+      try {
+        splitLocation = window.location.href.split(base)[1];
+      } catch (e) {}
+
+      if (splitLocation) {
+        location.replace(`${destination}${splitLocation}`);
+      } else {
+        location.replace(destination);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
